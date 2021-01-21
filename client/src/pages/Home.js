@@ -1,21 +1,33 @@
-import React from "react";
-import { Col, Row, Container } from "../components/Grid";
-import CreatePostForm from "../components/CreatePostForm";
-import PostsList from "../components/PostsList";
+import React, {useState, useEffect} from "react";
+
+import UserService from "../services/user.service";
 
 const Home = () => {
-  return (
-    <Container fluid>
-      <Row>
-        <Col size="md-6">
-          <CreatePostForm />
-        </Col>
-        <Col size="md-6 sm-12">
-          <PostsList />
-        </Col>
-      </Row>
-    </Container>
-  );
+    const [content, setContent] = useState("");
+
+    useEffect(() => {
+        UserService.getPublicContent().then(
+            (response) => {
+                setContent(response.data);
+            },
+            (error) => {
+                const _content =
+                    (error.response && error.response.data) ||
+                    error.message ||
+                    error.toString();
+
+                setContent(_content);
+            }
+        );
+    }, []);
+
+    return (
+        <div className="container">
+            <header className="jumbotron">
+                <h3>{content}</h3>
+            </header>
+        </div>
+    );
 };
 
 export default Home;
