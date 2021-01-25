@@ -25,7 +25,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and view
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
+
 app.use(routes);
+
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/theAppForMeDB", {
