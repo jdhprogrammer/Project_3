@@ -8,10 +8,9 @@ import {
 } from "./types";
 
 import AuthService from "../services/auth.service";
-import {response} from "express";
 
 export const register = (username, email, password) => (dispatch) => {
-    return AuthService.register(username, email, password).then((respsonse) => {
+    return AuthService.register(username, email, password).then((response) => {
         dispatch({
             type: REGISTER_SUCCESS
         });

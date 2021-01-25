@@ -1,13 +1,14 @@
 const config = require("../config/auth.config");
-const db = require("../models");
-const User = db.user;
-const Role = db.role;
+const {Role, User} = require("../models");
 
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
     const user = new User({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        zipCode: req.body.zipCode,
         username: req.body.username,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 8)

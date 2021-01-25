@@ -80,6 +80,7 @@ const Login = (props) => {
                         <label htmlFor="username">Username</label>
                         <Input
                             type="text"
+                            autoComplete="username"
                             className="form-control"
                             name="username"
                             value={username}
@@ -92,6 +93,7 @@ const Login = (props) => {
                         <label htmlFor="password">Password</label>
                         <Input
                             type="password"
+                            autoComplete="current-password"
                             className="form-control"
                             name="password"
                             value={password}

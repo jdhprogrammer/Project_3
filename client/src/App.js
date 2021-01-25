@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {Router, Switch, Route, Link} from "react-router-dom";
+import {Router, Route, Switch, Link} from "react-router-dom";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 import Login from "./components/UserReg/Login";
@@ -43,11 +42,12 @@ const App = () => {
     };
 
     return (
+
         <Router history={history}>
             <div>
                 <nav className="navbar navbar-expand navbar-dark bg-dark">
                     <Link to={"/"} className="navbar-brand">
-                        JDH Programmer
+                        theApp4me
                     </Link>
                     <div className="navbar-nav mr-auto">
                         <li className="nav-item">
@@ -124,6 +124,7 @@ const App = () => {
                 </div>
             </div>
         </Router>
+
     );
 };
 

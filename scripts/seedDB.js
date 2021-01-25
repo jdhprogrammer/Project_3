@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const db = require("../app/models");
 
 // This file empties the Posts collection and inserts the books below
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/theAppForMeDB");
+
+
 
 const bookSeed = [
   {

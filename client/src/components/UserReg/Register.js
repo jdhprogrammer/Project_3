@@ -18,6 +18,26 @@ const required = (value) => {
     }
 };
 
+const vname = (value) => {
+    if (value.length < 1 || value.length > 100) {
+        return (
+            <div className="alert alert-danger" role="alert">
+                First and Last Name are required.
+            </div>
+        );
+    }
+};
+
+const vzip = (value) => {
+    if (value.length < 5 || value.length > 100) {
+        return (
+            <div className="alert alert-danger" role="alert">
+                Valid Zipcode is required.
+            </div>
+        );
+    }
+};
+
 const validEmail = (value) => {
     if (!isEmail(value)) {
         return (
@@ -52,6 +72,9 @@ const Register = () => {
     const form = useRef();
     const checkBtn = useRef();
 
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [zipCode, setZipCode] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -59,6 +82,21 @@ const Register = () => {
 
     const {message} = useSelector(state => state.message);
     const dispatch = useDispatch();
+
+    const onChangeFirstName = (e) => {
+        const firstName = e.target.value;
+        setFirstName(firstName);
+    };
+
+    const onChangeLastName = (e) => {
+        const lastName = e.target.value;
+        setLastName(lastName);
+    };
+
+    const onChangeZipCode = (e) => {
+        const zipCode = e.target.value;
+        setZipCode(zipCode);
+    };
 
     const onChangeUsername = (e) => {
         const username = e.target.value;
@@ -83,7 +121,7 @@ const Register = () => {
         form.current.validateAll();
 
         if (checkBtn.current.context._errors.length === 0) {
-            dispatch(register(username, email, password))
+            dispatch(register(firstName, lastName, zipCode, username, email, password))
                 .then(() => {
                     setSuccessful(true);
                 })
@@ -106,9 +144,46 @@ const Register = () => {
                     {!successful && (
                         <div>
                             <div className="form-group">
+                                <label htmlFor="firstName">First Name</label>
+                                <Input
+                                    type="text"
+                                    className="form-control"
+                                    name="firstName"
+                                    value={firstName}
+                                    onChange={onChangeFirstName}
+                                    validations={[required, vname]}
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="lastName">Last Name</label>
+                                <Input
+                                    type="text"
+                                    className="form-control"
+                                    name="lastName"
+                                    value={lastName}
+                                    onChange={onChangeLastName}
+                                    validations={[required, vname]}
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="zipCode">Zip Code</label>
+                                <Input
+                                    type="text"
+                                    className="form-control"
+                                    name="zipCode"
+                                    value={zipCode}
+                                    onChange={onChangeZipCode}
+                                    validations={[required, vzip]}
+                                />
+                            </div>
+
+                            <div className="form-group">
                                 <label htmlFor="username">Username</label>
                                 <Input
                                     type="text"
+                                    autoComplete="username"
                                     className="form-control"
                                     name="username"
                                     value={username}
@@ -121,6 +196,7 @@ const Register = () => {
                                 <label htmlFor="email">Email</label>
                                 <Input
                                     type="text"
+                                    autoComplete="email"
                                     className="form-control"
                                     name="email"
                                     value={email}
@@ -133,6 +209,7 @@ const Register = () => {
                                 <label htmlFor="password">Password</label>
                                 <Input
                                     type="password"
+                                    autoComplete="current-password"
                                     className="form-control"
                                     name="password"
                                     value={password}
