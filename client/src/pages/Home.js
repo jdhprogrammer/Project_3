@@ -1,6 +1,12 @@
 import React, {useState, useEffect} from "react";
 
-import UserService from "../../services/user.service";
+import UserService from "../services/user.service";
+// import "./Landing/css/bootstrap.css";
+import "./Landing/css/landing-page.css";
+// import "./Landing/css/pe-icon-7-stroke.css";
+
+import bg3 from "./Landing/img/template/bg3.jpg"
+import iphone3 from "./Landing/img/template/iphone3.png"
 
 const Home = () => {
     const [content, setContent] = useState("");
@@ -23,63 +29,17 @@ const Home = () => {
 
     return (
         <body className="landing-page landing-page1">
-            <nav className="navbar navbar-transparent navbar-top" role="navigation">
-                <div className="container">
 
-                    <div className="navbar-header">
-                        <button id="menu-toggle" type="button" className="navbar-toggle" data-toggle="collapse" data-target="#example">
-                            <span className="sr-only">Toggle navigation</span>
-                            <span className="icon-bar bar1"></span>
-                            <span className="icon-bar bar2"></span>
-                            <span className="icon-bar bar3"></span>
-                        </button>
-                        <a href="http://www.creative-tim.com">
-                            <div className="logo-container">
-                                <div className="logo">
-                                    <img src="../src/components/UserReg/assets/img/new_logo.png" alt="Creative Tim Logo" />
-                                </div>
-                                <div className="brand">
-                                    Creative Tim
-                            </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div className="collapse navbar-collapse" id="example" >
-                        <ul className="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="#">
-                                    <i className="fa fa-facebook-square"></i>
-                            Like
-                            </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i className="fa fa-twitter"></i>
-                            Tweet
-                            </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i className="fa fa-pinterest"></i>
-                            Pin
-                            </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </nav>
-            <div className="wrapper">
+            <div className="wrapper mt-0">
                 <div className="parallax filter-gradient blue" data-color="blue">
                     <div className="parallax-background">
-                        <img className="parallax-background-image" src="assets/img/template/bg3.jpg" />
+                        <img className="parallax-background-image" src={bg3} />
                     </div>
                     <div className="container">
                         <div className="row">
                             <div className="col-md-5 hidden-xs">
                                 <div className="parallax-image">
-                                    <img className="phone" src="assets/img/template/iphone3.png" style={{"margin-top": "20px"}} />
+                                    <img className="phone" src={iphone3} style={{"margin-top": "20px"}} />
                                 </div>
                             </div>
                             <div className="col-md-6 col-md-offset-1">

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-
+    _id: Schema.Types.ObjectId,
     firstName: {type: String, required: "First Name is Required"},
     lastName: {type: String, required: "Last Name is Required"},
     zipCode: String,
@@ -13,7 +13,14 @@ const UserSchema = new Schema({
     userCreated: {type: Date, default: Date.now},
     lastUpdated: {type: Date},
     fullName: {type: String},
-    roles: [{type: Schema.Types.ObjectId, ref: "Role"}]
+    roles: [{type: Schema.Types.ObjectId, ref: "Role"}],
+    books: [{type: Schema.Types.ObjectId, ref: "Book"}],
+    posts: [{type: Schema.Types.ObjectId, ref: "Post"}],
+    notes: [{type: Schema.Types.ObjectId, ref: "Note"}],
+    workouts: [{type: Schema.Types.ObjectId, ref: "Workout"}],
+    images: [{type: Schema.Types.ObjectId, ref: "Image"}],
+    recipes: [{type: Schema.Types.ObjectId, ref: "Recipe"}],
+    transactions: [{type: Schema.Types.ObjectId, ref: "Transaction"}],
 
 });
 

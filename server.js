@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "development") {
   app.use(express.static("client/build"));
 }
 
@@ -49,8 +49,8 @@ app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
-const db = require("./app/models");
-const Role = db.role;
+// const db = require("./app/models");
+// const Role = db.role;
 
 // function initial() {
 //   Role.estimatedDocumentCount((err, count) => {

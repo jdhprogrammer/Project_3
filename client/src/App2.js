@@ -27,3 +27,6 @@ function App() {
 }
 
 export default App;
+
+
+db.books.find().forEach(function (d) {db.getSiblingDB('theAppForMeDB')['books'].insert(d);});

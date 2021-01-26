@@ -2,11 +2,13 @@ import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Router, Route, Switch, Link} from "react-router-dom";
 
+import {StoreProvider} from "./utils/GlobalState"
+
 import "./App.css";
 
 import Login from "./components/UserReg/Login";
 import Register from "./components/UserReg/Register";
-import Home from "./components/UserReg/Home";
+import Home from "./pages/Home";
 import Profile from "./components/UserReg/Profile";
 import BoardUser from "./components/UserReg/BoardUser";
 import BoardModerator from "./components/UserReg/BoardModerator";
@@ -42,88 +44,90 @@ const App = () => {
     };
 
     return (
-
-        <Router history={history}>
-            <div>
-                <nav className="navbar navbar-expand navbar-dark bg-dark">
-                    <Link to={"/"} className="navbar-brand">
-                        theApp4me
+        <StoreProvider>
+            <Router history={history}>
+                <div>
+                    <nav className="navbar navbar-expand navbar-dark bg-dark">
+                        <Link to={"/"} className="navbar-brand">
+                            theApp4me
                     </Link>
-                    <div className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <Link to={"/home"} className="nav-link">
-                                Home
+                        <div className="navbar-nav mr-auto">
+                            <li className="nav-item">
+                                <Link to={"/home"} className="nav-link">
+                                    Home
                         </Link>
-                        </li>
+                            </li>
 
-                        {showModeratorBoard && (
-                            <li className="nav-item">
-                                <Link to={"/mod"} className="nav-link">
-                                    Moderator Board
+                            {showModeratorBoard && (
+                                <li className="nav-item">
+                                    <Link to={"/mod"} className="nav-link">
+                                        Moderator Board
                                  </Link>
-                            </li>
-                        )}
+                                </li>
+                            )}
 
-                        {showAdminBoard && (
-                            <li className="nav-item">
-                                <Link to={"/admin"} className="nav-link">
-                                    Admin Board
+                            {showAdminBoard && (
+                                <li className="nav-item">
+                                    <Link to={"/admin"} className="nav-link">
+                                        Admin Board
                                 </Link>
-                            </li>
-                        )}
+                                </li>
+                            )}
 
-                        {currentUser && (
-                            <li className="nav-item">
-                                <Link to={"/user"} className="nav-link">
-                                    User
+                            {currentUser && (
+                                <li className="nav-item">
+                                    <Link to={"/user"} className="nav-link">
+                                        User
                                 </Link>
-                            </li>
-                        )}
-                    </div>
-
-                    {currentUser ? (
-                        <div className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <Link to={"/profile"} className="nav-link">
-                                    {currentUser.username}
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <a href="/login" className="nav-link" onClick={logOut}>
-                                    LogOut
-                                </a>
-                            </li>
+                                </li>
+                            )}
                         </div>
-                    ) : (
+
+                        {currentUser ? (
                             <div className="navbar-nav ml-auto">
                                 <li className="nav-item">
-                                    <Link to={"/login"} className="nav-link">
-                                        Login
+                                    <Link to={"/profile"} className="nav-link">
+                                        {currentUser.username}
                                     </Link>
                                 </li>
-
                                 <li className="nav-item">
-                                    <Link to={"/register"} className="nav-link">
-                                        Sign Up
-                                    </Link>
+                                    <a href="/login" className="nav-link" onClick={logOut}>
+                                        LogOut
+                                </a>
                                 </li>
                             </div>
-                        )}
-                </nav>
+                        ) : (
+                                <div className="navbar-nav ml-auto">
+                                    <li className="nav-item">
+                                        <Link to={"/login"} className="nav-link">
+                                            Login
+                                    </Link>
+                                    </li>
 
-                <div className="container mt-3">
-                    <Switch>
-                        <Route exact path={["/", "/home"]} component={Home} />
-                        <Route exact path="/login" component={Login} />
-                        <Route exact path="/register" component={Register} />
-                        <Route exact path="/profile" component={Profile} />
-                        <Route path="/user" component={BoardUser} />
-                        <Route path="/mod" component={BoardModerator} />
-                        <Route path="/admin" component={BoardAdmin} />
-                    </Switch>
+                                    <li className="nav-item">
+                                        <Link to={"/register"} className="nav-link">
+                                            Sign Up
+                                    </Link>
+                                    </li>
+                                </div>
+                            )}
+                    </nav>
+
+                    <div className="container mt-0">
+                        <Switch>
+                            <Route exact path={["/", "/home"]} component={Home} />
+                            <Route exact path="/login" component={Login} />
+                            <Route exact path="/register" component={Register} />
+                            <Route exact path="/profile" component={Profile} />
+                            <Route path="/user" component={BoardUser} />
+                            <Route path="/mod" component={BoardModerator} />
+                            <Route path="/admin" component={BoardAdmin} />
+                        </Switch>
+                    </div>
                 </div>
-            </div>
-        </Router>
+            </Router>
+
+        </StoreProvider>
 
     );
 };

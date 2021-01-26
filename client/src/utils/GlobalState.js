@@ -1,9 +1,10 @@
 import React, {createContext, useReducer, useContext} from "react";
 import {
-  SET_CURRENT_POST,
-  REMOVE_POST,
-  UPDATE_POSTS,
-  ADD_POST,
+  SET_CURRENT_BOOK,
+  REMOVE_BOOK,
+  UPDATE_BOOKS,
+  UPDATE_SEARCH_BOOKS,
+  ADD_BOOK,
   ADD_FAVORITE,
   UPDATE_FAVORITES,
   REMOVE_FAVORITE,
@@ -15,39 +16,46 @@ const {Provider} = StoreContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case SET_CURRENT_POST:
+    case SET_CURRENT_BOOK:
       return {
         ...state,
-        currentPost: action.post,
+        currentBook: action.book,
         loading: false
       };
 
-    case UPDATE_POSTS:
+    case UPDATE_BOOKS:
       return {
         ...state,
-        posts: [...action.posts],
+        savedBooks: [...action.savedBooks],
         loading: false
       };
 
-    case ADD_POST:
+    case UPDATE_SEARCH_BOOKS:
       return {
         ...state,
-        posts: [action.post, ...state.posts],
+        books: [...action.books],
         loading: false
       };
 
-    case REMOVE_POST:
+    case ADD_BOOK:
       return {
         ...state,
-        posts: state.posts.filter((post) => {
-          return post._id !== action._id;
+        books: [action.book, ...state.books],
+        loading: false
+      };
+
+    case REMOVE_BOOK:
+      return {
+        ...state,
+        savedBooks: state.savedBooks.filter((book) => {
+          return book._id !== action._id
         })
       };
 
     case ADD_FAVORITE:
       return {
         ...state,
-        favorites: [action.post, ...state.favorites],
+        favorites: [action.book, ...state.favorites],
         loading: false
       };
 
@@ -61,8 +69,8 @@ const reducer = (state, action) => {
     case REMOVE_FAVORITE:
       return {
         ...state,
-        favorites: state.favorites.filter((post) => {
-          return post._id !== action._id;
+        favorites: state.favorites.filter((book) => {
+          return book.id !== action.id;
         })
       };
 
@@ -79,13 +87,16 @@ const reducer = (state, action) => {
 
 const StoreProvider = ({value = [], ...props}) => {
   const [state, dispatch] = useReducer(reducer, {
-    posts: [],
-    budgets: [],
-    currentPost: {
+    books: [],
+    savedBooks: [],
+    currentBook: {
       _id: 0,
+      id: 0,
       title: "",
-      body: "",
-      author: ""
+      author: "",
+      description: "",
+      image: "",
+      link: "",
     },
     favorites: [],
     loading: false
