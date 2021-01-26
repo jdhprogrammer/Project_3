@@ -12,8 +12,16 @@ const Profile = () => {
     return (
         <div className="container">
             <header className="jumbotron">
+                <h2>
+                    <strong>
+                        Welcome {currentUser.firstName} {currentUser.lastName}. </strong>
+                </h2>
+                <h4>
+                    Representin' the {currentUser.zipCode}!
+                </h4>
+                <br></br>
                 <h3>
-                    <strong>{currentUser.username}</strong> Profile
+                    <strong>{currentUser.username}</strong> Profile Page
             </h3>
             </header>
             <p>
