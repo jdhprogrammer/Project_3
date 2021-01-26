@@ -1,0 +1,29 @@
+.Catamaran {
+    font-family: 'Catamaran', sans-serif;
+    /* text-decoration: none; */
+}
+
+main {
+    font-family: 'Roboto', sans-serif;
+}
+
+main.container {
+    padding-top: 30px;
+}
+
+.callouts {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 30px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    /* border: thin lightgray solid */
+}
+
+html {
+    min-height: 960px;
+}
