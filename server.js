@@ -4,7 +4,7 @@ const cors = require("cors");
 
 // -------------------------------------- //
 var corsOptions = {
-  origin: "http://localhost:3000"
+  origin: "http://localhost:8081"
 };
 
 const mongoose = require("mongoose");
@@ -13,7 +13,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
-app.use(cors());
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({extended: true}));
