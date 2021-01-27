@@ -11,9 +11,9 @@ const Footer = () => {
 
 
   return (
-    <footer className="footer px-0 px-lg-3">
+    <footer style={{"backgroundColor": "rgb(230, 230, 230)"}} className="footer px-0 px-lg-3">
       <Container fluid>
-        <Row className="mt-4">
+        <Row className="mt-0 pt-2 pb-2">
           <Col className="m-0">
             <p className="copyright mx-auto mt-0 mb-0 text-center">
               © {new Date().getFullYear()}{" "}
@@ -22,7 +22,7 @@ const Footer = () => {
           </Col>
         </Row>
       </Container>
-      <Navbar className="mb-2" style={{"padding": "10px", "height": "80"}} >
+      <Navbar className="mb-0 pb-2 pt-2" style={{"padding": "10px", "height": "80", "backgroundColor": "rgb(245, 245, 245)"}} >
         <Navbar.Brand className="p-0">
           <Link to={"/"} className="navbar-brand m-0 p-0 pl-3">
             theApp4me

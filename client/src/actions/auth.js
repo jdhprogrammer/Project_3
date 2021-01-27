@@ -11,6 +11,8 @@ import AuthService from "../services/auth.service";
 
 export const register = (firstName, lastName, zipCode, username, email, password) => (dispatch) => {
     return AuthService.register(firstName, lastName, zipCode, username, email, password).then((response) => {
+        console.log(response.data)
+        console.log(response.data.message)
         dispatch({
             type: REGISTER_SUCCESS
         });
@@ -29,6 +31,7 @@ export const register = (firstName, lastName, zipCode, username, email, password
                     error.response.data.message) ||
                 error.message ||
                 error.toString();
+            console.log(message)
 
             dispatch({
                 type: REGISTER_FAIL,

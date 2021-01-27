@@ -2,9 +2,10 @@ import React, {useState, useEffect} from "react";
 import Link from "react-router-dom/Link"
 
 import UserService from "../services/user.service";
-// import "./Landing/css/bootstrap.css";
+
 import "./Landing/css/landing-page.css";
-// import "./Landing/css/pe-icon-7-stroke.css";
+import Spinner from "react-bootstrap/Spinner";
+
 
 import bg3 from "./Landing/img/template/bg3.jpg";
 import app4mePhone from "./Landing/img/app4me_cutout.png";
@@ -200,7 +201,9 @@ const Home = () => {
 
             </>
             ) : (
-                    <div>loading...</div>
+                <Spinner animation="border" role="status">
+                <span className="sr-only">Loading...</span>
+              </Spinner>
                 )}
         </body >
     );

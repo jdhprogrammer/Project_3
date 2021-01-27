@@ -16,6 +16,8 @@ import Profile from "./components/UserReg/Profile";
 import BoardUser from "./components/UserReg/UsersPage";
 import BoardModerator from "./components/UserReg/BoardModerator";
 import BoardAdmin from "./components/UserReg/BoardAdmin";
+// ------ Dashboard --------------------- //
+import Dashboard from "./layouts/Dashboard"
 // ----- React-Bootstrap Components ----//
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -62,12 +64,12 @@ const App = () => {
                     <img src={ta4m_icon} className="shadow-sm" style={{"width": "50px", "border-radius": "10px", "margin-left": "20px"}} />
                     <Navbar.Brand className="mr-auto p-0">
                         <Link to={"/"} className="navbar-brand m-0 p-0 pl-3">
-                            theApp4me
-                            </Link>
+                            <span style={{"color": "white"}}>the</span><span style={{"color": "white"}}>App</span><span style={{"color": "white"}}>4</span><span style={{"color": "white"}}>me</span>
+                        </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mr-auto">
+                        <Nav className="mr-auto ml-3">
                             {showModeratorBoard && (
                                 <Nav.Link>
                                     <Link to={"/mod"} className="nav-link">Moderator Board</Link>
@@ -79,9 +81,14 @@ const App = () => {
                                 </Nav.Link>
                             )}
                             {currentUser && (
-                                <Nav.Link>
-                                    <Link to={"/user"} className="nav-link">Welcome</Link>
-                                </Nav.Link>
+                                <>
+                                    <Nav.Link>
+                                        <Link to={"/user"} className="nav-link">Welcome</Link>
+                                    </Nav.Link>
+                                    <Nav.Link>
+                                        <Link to={"/dashboard"} className="nav-link">Dashboard</Link>
+                                    </Nav.Link>
+                                </>
                             )}
                         </Nav>
                         {currentUser ? (
@@ -123,10 +130,11 @@ const App = () => {
                     <Route path="/user" component={BoardUser} />
                     <Route path="/mod" component={BoardModerator} />
                     <Route path="/admin" component={BoardAdmin} />
+                    <Route path="/dashboard" component={Dashboard} />
                 </Switch>
                 {/* </div> */}
 
-                <Footer />
+                <Footer stick="bottom" />
             </Router>
         </StoreProvider>
     );

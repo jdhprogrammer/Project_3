@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import Spinner from "react-bootstrap/Spinner"
 
 import UserService from "../../services/user.service";
 // ------------ images and screenshots
@@ -82,7 +83,7 @@ const UsersPage = () => {
                                      It is about having 0ne
                                     place you can go during your day that is just for you.<br />
                                         <strong>theApp4me</strong>
-                                    keeps your life together and running the best it can!</h5>
+                                     keeps your life together and running the best it can!</h5>
                                     <p>...</p>
                                     <h5>
                                         On this page you can read about all the different <br />
