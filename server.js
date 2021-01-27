@@ -3,9 +3,9 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 // -------------------------------------- //
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
+// var corsOptions = {
+//   origin: "http://localhost:3001"
+// };
 
 const mongoose = require("mongoose");
 const routes = require("./app/routes");
@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 
 // Define middleware here
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({extended: true}));

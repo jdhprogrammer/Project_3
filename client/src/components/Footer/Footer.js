@@ -11,7 +11,7 @@ const Footer = () => {
 
 
   return (
-    <footer style={{"backgroundColor": "rgb(230, 230, 230)"}} className="footer fixed-bottom px-0">
+    <footer style={{"backgroundColor": "rgb(230, 230, 230)"}} className="footer px-0">
       <Container fluid>
         <Row className="mt-0 pt-2 pb-2">
           <Col className="m-0">

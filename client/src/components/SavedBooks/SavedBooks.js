@@ -43,7 +43,7 @@ function SavedBooks({user}) {
 
   const getBooks = () => {
     dispatch({type: LOADING});
-    API.getBooks(state.user.id)
+    API.getBooks()
       .then(results => {
         console.log("getting books")
         dispatch({
