@@ -416,13 +416,21 @@ a:focus, a:active {
 }
 
 .section {
-  padding: 30px 0;
+  padding: 0px 0;
   position: relative;
   background-color: #FFFFFF;
 }
 
 .section-gray {
   background-color: #EEEEEE;
+}
+
+.section-white {
+  background-color: #FFFFFF;
+}
+
+.section-white {
+  background-color: #FFFFFF;
 }
 
 .section-white {
@@ -1028,7 +1036,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de8e0009', e
 }
 
 .landing-page .parallax .description{
-  margin-top: 200px;
+  margin-top: 15px;
   color: white;
   padding: 5px;
 }
@@ -1657,11 +1665,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de8e0009', e
     height: 550px;
   }
   .landing-page .parallax .parallax-background img {
-    width: auto;
-    height: 100%;
+   
   }
   .landing-page .parallax .description{
-    margin-top: 65px;  }
+    margin-top: 10px;  }
+  .landing-page .parallax .description h2{
+   font-size: x-large;  }
+  .landing-page .parallax .description h5{
+   font-size: medium;  }
+  .landing-page .parallax .description p{
+   font-size: medium;  }
   .landing-page .parallax .buttons{
     margin: 20px 0;
   }
