@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const db = require("../app/models");
 
 // This file empties the Books collection and inserts the books below
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bookSearchDB");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/theAppForMeDB");
 
 const bookSeed = [
   {
@@ -11,6 +11,7 @@ const bookSeed = [
     image: "http://books.google.com/books/content?id=sazytgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     link: "http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api",
     title: "The Hunger Games",
+    user: "601159598b5c8d6dcef8ab78",
     date: new Date(Date.now())
   }
 ];

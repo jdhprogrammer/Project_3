@@ -1,5 +1,7 @@
 import React, {createContext, useReducer, useContext} from "react";
 import {
+  SET_USER,
+  LOGOUT_USER,
   SET_CURRENT_BOOK,
   REMOVE_BOOK,
   UPDATE_BOOKS,
@@ -14,8 +16,19 @@ import {
 const StoreContext = createContext();
 const {Provider} = StoreContext;
 
+
 const reducer = (state, action) => {
   switch (action.type) {
+    case SET_USER:
+      return {
+        ...state,
+        user: action.user,
+      }
+    case LOGOUT_USER:
+      return {
+        ...state,
+        user: null,
+      }
     case SET_CURRENT_BOOK:
       return {
         ...state,
@@ -87,6 +100,7 @@ const reducer = (state, action) => {
 
 const StoreProvider = ({value = [], ...props}) => {
   const [state, dispatch] = useReducer(reducer, {
+    user: null,
     books: [],
     savedBooks: [],
     currentBook: {

@@ -9,7 +9,8 @@ import Button from "react-bootstrap/Button";
 import SavedModal from "../Modal/SavedModal"
 import {set} from "mongoose";
 
-function SavedBooks() {
+function SavedBooks({user}) {
+
   const [state, dispatch] = useStoreContext();
   const [modalShow, setModalShow] = useState({});
 
@@ -42,7 +43,7 @@ function SavedBooks() {
 
   const getBooks = () => {
     dispatch({type: LOADING});
-    API.getBooks()
+    API.getBooks(state.user.id)
       .then(results => {
         console.log("getting books")
         dispatch({

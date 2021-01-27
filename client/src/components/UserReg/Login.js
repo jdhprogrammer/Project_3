@@ -1,4 +1,6 @@
 import React, {useState, useRef} from "react";
+import {useStoreContext} from "../../utils/GlobalState";
+
 import {useDispatch, useSelector} from "react-redux";
 import {Redirect} from 'react-router-dom';
 

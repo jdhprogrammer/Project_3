@@ -11,7 +11,7 @@ const Footer = () => {
 
 
   return (
-    <footer style={{"backgroundColor": "rgb(230, 230, 230)"}} className="footer px-0 px-lg-3">
+    <footer style={{"backgroundColor": "rgb(230, 230, 230)"}} className="footer fixed-bottom px-0">
       <Container fluid>
         <Row className="mt-0 pt-2 pb-2">
           <Col className="m-0">
@@ -25,8 +25,9 @@ const Footer = () => {
       <Navbar className="mb-0 pb-2 pt-2" style={{"padding": "10px", "height": "80", "backgroundColor": "rgb(245, 245, 245)"}} >
         <Navbar.Brand className="p-0">
           <Link to={"/"} className="navbar-brand m-0 p-0 pl-3">
-            theApp4me
-                            </Link>
+            <span style={{"color": "#F94F74"}}>the</span><span style={{"color": "#FEC326"}}>App</span>
+            <span style={{"color": "#1d87ff"}}>4</span><span style={{"color": "#02BAB9"}}>me</span>
+          </Link>
         </Navbar.Brand>
 
         <Nav >

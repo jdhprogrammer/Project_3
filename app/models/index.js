@@ -5,6 +5,6 @@ module.exports = {
     User: require("./user"),
     Role: require("./role"),
     Post: require("./post"),
-    // Book: require("./book"),
+    Book: require("./book"),
     ROLES: ["user", "admin", "moderator"]
 }

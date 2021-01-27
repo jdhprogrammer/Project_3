@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner"
 
 import UserService from "../../services/user.service";
@@ -34,6 +35,14 @@ import paris from "../../pages/Landing/img/paris.jpg";
 import sao from "../../pages/Landing/img/sao.jpg";
 import tkShops from "../../pages/Landing/img/Tokyo_Shops.jpg"
 
+import shards from "../../pages/Landing/img/shards.jpg"
+import earth from "../../pages/Landing/img/earth.jpg"
+import purpleMountain from "../../pages/Landing/img/purpleMountains.jpg"
+import abstract from "../../pages/Landing/img/abstractPattern.png"
+import amebas from "../../pages/Landing/img/amebas.jpg"
+import crystal from "../../pages/Landing/img/crystalWatersky.jpg"
+import blackcolor from "../../pages/Landing/img/blackandcolor.jpg"
+
 import "./UsersPage.css";
 import "../../pages/Landing/css/landing-page.css"
 
@@ -42,8 +51,9 @@ import "../../pages/Landing/css/landing-page.css"
 const UsersPage = () => {
     const [content, setContent] = useState("");
 
-    const landingBG = [bg3, bgTokyo, ocean, slp, paris, sao, tkShops];
-    const landingBg = landingBG[Math.floor(Math.random() * 6)];
+    // const landingBG = [bg3, bgTokyo, ocean, slp, paris, sao, tkShops];
+    const landingBG = [shards, purpleMountain, abstract, amebas, blackcolor];
+    const landingBg = landingBG[Math.floor(Math.random() * 5)];
 
     useEffect(() => {
         UserService.getUserBoard().then(
@@ -67,19 +77,21 @@ const UsersPage = () => {
         <body className="landing-page landing-page1">
             <div className="wrapper ">
 
-                <div style={{"height": "320px"}} className="parallax filter-gradient blue" data-color="blue">
+                <div style={{"height": "320px"}} className="parallax filter-gradient black" data-color="blue">
                     <div className="parallax-background my-auto">
-                        <img className="parallax-background-image my-auto" src={landingBg} />
+                        <img className="parallax-background-image my-auto" src={abstract} />
                     </div>
                     <div className="container">
                         <div className="row">
 
                             <div className="col-12 col-md-">
                                 <div className="description text-center">
-                                    <h2 ><strong>theApp4me</strong></h2>
+                                    <h2 ><strong><span style={{"color": "#F94F74"}}>the</span><span style={{"color": "#FEC326"}}>App</span>
+                                        <span style={{"color": "#1d87ff"}}>4</span><span style={{"color": "#02BAB9"}}>me</span></strong></h2>
                                     <br />
-                                    <h5>Thank you for Joining <strong>theApp4me</strong> lifestyle.
-                                    It is primarily focused on your personal well being. <br />
+                                    <h5>Thank you for Joining <strong><span style={{"color": "#F94F74"}}>the</span><span style={{"color": "#FEC326"}}>App</span>
+                                        <span style={{"color": "#1d87ff"}}>4</span><span style={{"color": "#02BAB9"}}>me</span></strong> lifestyle.
+                                    The Apps primary focus is on your personal well being. <br />
                                      It is about having 0ne
                                     place you can go during your day that is just for you.<br />
                                         <strong>theApp4me</strong>
@@ -87,7 +99,8 @@ const UsersPage = () => {
                                     <p>...</p>
                                     <h5>
                                         On this page you can read about all the different <br />
-                                        features and pages that are built into <strong>theApp4me</strong>.
+                                        features and applications that are built into <strong><span style={{"color": "#F94F74"}}>the</span><span style={{"color": "#FEC326"}}>App</span>
+                                            <span style={{"color": "#1d87ff"}}>4</span><span style={{"color": "#02BAB9"}}>me</span></strong>.
                                     </h5>
                                 </div>
 
@@ -95,18 +108,18 @@ const UsersPage = () => {
                         </div>
                     </div>
                 </div>
-                <div class="section section-gray section-clients">
+                <div className="section section-gray section-clients">
                     <main role="main" className="container">
 
                         <div className="row justify-content-around text-center py-2">
                             <div className="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-4">
                                 <div className="row">
-                                    <div className="col callouts">PLANNER</div>
+                                    <div className="col callouts"><Link to={"/planner"}>PLANNER</Link></div>
                                 </div>
                                 <div className="row">
                                     <div className="col text-center">
-                                        <img className="img-fluid rounded mx-auto d-block" src={planner}
-                                            alt="man looking down at camera in hands" />
+                                        <Link to={"/planner"}> <img className="img-fluid rounded mx-auto d-block" src={planner}
+                                            alt="man looking down at camera in hands" /></Link>
                                     </div>
                                 </div>
                                 <div className="row py-3">Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr zimbra, mobly napster hipmunk prezi chartly bitly spock. Loopt twones meebo hipmunk, fleck xobni. Convore bebo rovio vimeo zanga handango blekko koofers, loopt twitter imvu flickr kaboodle chegg. Zillow lala mzinga, sifteo. Voki heekya sococo geni oovoo disqus, empressr doostang lijit.</div>
@@ -141,7 +154,7 @@ const UsersPage = () => {
 
                     </main>
                 </div>
-                <div class="section section-aqua section-clients">
+                <div className="section section-aqua section-clients">
                     <main role="main" className="container">
                         <div className="row justify-content-around text-center py-2">
                             <div className="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-4">
@@ -186,29 +199,33 @@ const UsersPage = () => {
                         </div>
                     </main>
                 </div>
-                <div class="section section-gray section-clients">
-                    <main role="main" className="container">
-                        <div className="row justify-content-around text-center py-2">
+                <div className="section section-gray section-clients mb-5">
+                    <main role="main" className="container mb-5">
+                        <div className="row justify-content-around text-center py-2 mb-5">
                             <div className="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-4">
                                 <div className="row">
-                                    <div className="col callouts">FOOD</div>
+                                    <div className="col callouts">
+                                        <Link to={"/food"}>
+                                            FOOD
+                                        </Link>
+                                    </div>
                                 </div>
                                 <div className="row">
                                     <div className="col text-center">
-                                        <img className="img-fluid rounded mx-auto d-block" src={food}
-                                            alt="man looking down at camera in hands" />
+                                        <Link to={"/food"}><img className="img-fluid rounded mx-auto d-block" src={food}
+                                            alt="man looking down at camera in hands" /></Link>
                                     </div>
                                 </div>
                                 <div className="row py-3">Satoshi Nakamoto launched lots of decentralisation when Litecoin required many decentralised application, for Augur limited some public key behind lots of multi signature. Blockchain thought some robust smart contract in a algorithm! Since OmiseGo bought few double spend, Augur could be many algo-traded vaporware, but Decred data mining few trusted hard fork!</div>
                             </div>
                             <div className="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-4">
                                 <div className="row">
-                                    <div className="col callouts">BOOKS</div>
+                                    <div className="col callouts"><Link to={"/books"}>BOOKS</Link></div>
                                 </div>
                                 <div className="row">
                                     <div className="col text-center">
-                                        <img className="img-fluid rounded mx-auto d-block" src={books}
-                                            alt="someone running frmo a low angle mainly showing their shoes and the ground and sky" />
+                                        <Link to={"/books"}><img className="img-fluid rounded mx-auto d-block" src={books}
+                                            alt="someone running frmo a low angle mainly showing their shoes and the ground and sky" /></Link>
                                     </div>
                                 </div>
                                 <div className="row py-3">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</div>

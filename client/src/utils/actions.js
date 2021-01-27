@@ -4,6 +4,8 @@ export const REMOVE_BOOK = "REMOVE_BOOK";
 export const SET_CURRENT_BOOK = "SET_CURRENT_BOOK";
 export const ADD_BOOK = "ADD_BOOK";
 export const LOADING = "LOADING";
+export const SET_USER = "SET_USER";
+export const LOGOUT_USER = "LOGOUT_USER";
 
 export const ADD_FAVORITE = "ADD_FAVORITE";
 export const REMOVE_FAVORITE = "REMOVE_FAVORITE";

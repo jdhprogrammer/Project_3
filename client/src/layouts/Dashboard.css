@@ -7,7 +7,7 @@
         z-index: 100;
         padding: 48px 0 0;
         box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-        background-color: rgb(71, 131, 101, 0.5);
+        background-color: #1d87ff;
     }
     #sidebar-wrapper{
         min-height: 100% !important;
@@ -29,3 +29,5 @@
         width: 100%;
         padding-bottom: 50px;
     }
+
+  

@@ -1,13 +1,24 @@
 import React from "react";
+import {Redirect} from 'react-router-dom';
+import {useSelector} from "react-redux";
+
 import {Col, Row, Container} from "../components/Grid";
 import SearchBooks from "../components/SearchBooks/SearchBooks";
 import BooksList from "../components/BooksList/BooksList";
 import SavedBooks from "../components/SavedBooks/SavedBooks"
 
-const Home = () => {
+
+const Books = () => {
+
+  const {user: currentUser} = useSelector((state) => state.auth);
+
+  if (!currentUser) {
+    return <Redirect to="/login" />;
+  }
+
   return (
     <Container fluid>
-      <Row>
+      <Row >
         <Col size="xl-4 lg-4 md-6 sm-9 xs-12" order=" order-3 order-sm-3 order-md-3 order-lg-1">
           <SavedBooks />
         </Col>
@@ -22,4 +33,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Books;

@@ -9,6 +9,7 @@ main {
 
 main.container {
     padding-top: 30px;
+    
 }
 
 .callouts {
@@ -26,4 +27,8 @@ img {
 
 html {
     min-height: 960px;
+}
+
+body {
+    margin-bottom: 300px;
 }

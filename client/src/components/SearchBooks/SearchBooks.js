@@ -8,7 +8,7 @@ import Form from "react-bootstrap/Form";
 import API from "../../utils/API";
 import bookSearchImage from "../../pages/images/book_search.jpg";
 
-function SearchBookForm() {
+function SearchBookForm({ }) {
   const titleRef = useRef();
   const authorRef = useRef();
   const subjectRef = useRef();
@@ -39,6 +39,7 @@ function SearchBookForm() {
           image: info.imageLinks.smallThumbnail,
           link: info.infoLink,
           id: item.id,
+          user: state.user._id
         }
         dispatch({
           type: ADD_BOOK,

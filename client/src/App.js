@@ -16,8 +16,9 @@ import Profile from "./components/UserReg/Profile";
 import BoardUser from "./components/UserReg/UsersPage";
 import BoardModerator from "./components/UserReg/BoardModerator";
 import BoardAdmin from "./components/UserReg/BoardAdmin";
-// ------ Dashboard --------------------- //
+// ------ Pages--------------------- //
 import Dashboard from "./layouts/Dashboard"
+import Books from "./pages/Books"
 // ----- React-Bootstrap Components ----//
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -64,7 +65,8 @@ const App = () => {
                     <img src={ta4m_icon} className="shadow-sm" style={{"width": "50px", "border-radius": "10px", "margin-left": "20px"}} />
                     <Navbar.Brand className="mr-auto p-0">
                         <Link to={"/"} className="navbar-brand m-0 p-0 pl-3">
-                            <span style={{"color": "white"}}>the</span><span style={{"color": "white"}}>App</span><span style={{"color": "white"}}>4</span><span style={{"color": "white"}}>me</span>
+                            <span style={{"color": "#F94F74"}}>the</span><span style={{"color": "#FEC326"}}>App</span>
+                            <span style={{"color": "#1d87ff"}}>4</span><span style={{"color": "#02BAB9"}}>me</span>
                         </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -131,6 +133,7 @@ const App = () => {
                     <Route path="/mod" component={BoardModerator} />
                     <Route path="/admin" component={BoardAdmin} />
                     <Route path="/dashboard" component={Dashboard} />
+                    <Route path="/books" component={Books} />
                 </Switch>
                 {/* </div> */}
 

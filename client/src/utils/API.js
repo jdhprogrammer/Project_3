@@ -9,8 +9,8 @@ const API_KEY = process.env.GOOGLE_BOOK_SEARCH_API_KEY;
 
 export default {
   // Gets all books
-  getBooks: function () {
-    return axios.get("/api/books");
+  getBooks: function (user) {
+    return axios.get("/api/books/" + user);
   },
   // Gets the book with the given id
   getBook: function (id) {

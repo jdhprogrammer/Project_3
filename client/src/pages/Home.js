@@ -11,6 +11,8 @@ import bg3 from "./Landing/img/template/bg3.jpg";
 import app4mePhone from "./Landing/img/app4me_cutout.png";
 import dane from "./Landing/img/faces/dane.jpeg";
 
+import app4dash from "../pages/images/theAppForMe_Dashboard_lookinGood.jpeg"
+
 
 import bgTokyo from "./Landing/img/tokyo_sky.jpg";
 import ocean from "./Landing/img/oceans.jpg";
@@ -56,7 +58,7 @@ const Home = () => {
         <body className="landing-page landing-page1">
             {content ? (<>
                 <div className="wrapper ">
-                    <div className="parallax filter-gradient blue" data-color="blue">
+                    <div className="parallax filter-gradient black" data-color="blue">
                         <div className="parallax-background">
                             <img className="parallax-background-image" src={landingBg} />
                         </div>
@@ -69,7 +71,8 @@ const Home = () => {
                                 </div>
                                 <div className="col-md-6 col-md-offset-1">
                                     <div id="descriptionHome" className="description">
-                                        <h2><strong>theApp4me</strong></h2>
+                                        <h2><strong><span style={{"color": "#F94F74"}}>the</span><span style={{"color": "#FEC326"}}>App</span>
+                                            <span style={{"color": "#1d87ff"}}>4</span><span style={{"color": "#02BAB9"}}>me</span></strong></h2>
                                         <br />
                                         <h5><strong>theApp4me</strong> is a web and mobile application for Me and for You. It is primarily focused on your personal well being. It is about having 0ne place you can go during your day that is just for you. <strong>theApp4me</strong> keeps your life together and running the best it can!</h5>
                                     </div>
@@ -77,13 +80,13 @@ const Home = () => {
 
                                         <Link to={"/register"} className="btn btn-outline btn-light mr-3" style={{"text-decoration": "none"}}>SignUp Now!</Link>
 
-                                        <button className="btn btn-simple btn-neutral">
+                                        <button className="btn btn-outline-light m-1 btn-white">
                                             <i className="fa fa-apple"></i>
                                         </button>
-                                        <button className="btn btn-simple btn-neutral">
+                                        <button className="btn btn-outline-light m-1 btn-white">
                                             <i className="fa fa-android"></i>
                                         </button>
-                                        <button className="btn btn-simple btn-neutral">
+                                        <button className="btn btn-outline-light m-1 btn-white">
                                             <i className="fa fa-windows"></i>
                                         </button>
                                     </div>
@@ -95,10 +98,15 @@ const Home = () => {
                         <div className="container text-center">
                             <h4 className="header-text">What is it?<br /> <br />& Who's using it?</h4>
                             <p>
-                                Everyone's using <strong>theApp4me</strong> and loving it. <br />They can find all the essentials of thier life in one place and keep track of them.<br />Everything from their Day Planner to Fitness Tracker... <br />from their Budget Tool to Reading List...<br /> a place to Save Favorite Photos and write Posts about favorite Memories.
+                                Everyone's using <strong><span style={{"color": "#F94F74"}}>the</span><span style={{"color": "#FEC326"}}>App</span>
+                                    <span style={{"color": "#1d87ff"}}>4</span><span style={{"color": "#02BAB9"}}>me</span></strong> and loving it. <br />They can find all the essentials of thier life in one place and keep track of them.<br />Everything from their Day Planner to Fitness Tracker... <br />from their Budget Tool to Reading List...<br /> a place to Save Favorite Photos and write Posts about favorite Memories.
                             </p>
                             <p>
-                                We have partnered with many Large Corporations and Small Businesses working to get our app out there, seen, and used to its fullest. Company HR departments are providing it to their employees. Encouraging them to take advantage of its many features and take time each day for themselves and focus less on Social Media and Mindless Games. <strong>theApp4me</strong> has been getting Rave Reviews from people all over the globe.
+                                We have partnered with many Large Corporations and Small Businesses working to get our app out there, seen,
+                                and used to its fullest. Company HR departments are providing it to their employees. Encouraging them to take
+                                advantage of its many features and take time each day for themselves and focus less on Social Media and Mindless Games.
+                                <strong><span style={{"color": "#F94F74"}}>the</span><span style={{"color": "#FEC326"}}>App</span>
+                                    <span style={{"color": "#1d87ff"}}>4</span><span style={{"color": "#02BAB9"}}>me</span></strong> has been getting Rave Reviews from people all over the globe.
                             </p>
                             <div className="logos">
                                 <ul className="list-unstyled">
@@ -123,13 +131,13 @@ const Home = () => {
                                     <h4 className="header-text">It's beautiful</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                     <p>Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.
-                            
-                                       
+
+
                                     </p>
                                 </div>
                             </div>
                             <div className="col-md-5 col-md-offset-1 hidden-xs">
-                                <img src={mac} />
+                                <img className="shadow" style={{"border-radius": "25px"}} src={app4dash} />
                             </div>
                         </div>
                     </div>
@@ -141,7 +149,7 @@ const Home = () => {
                             <div className="col-md-4">
                                 <div className="card card-blue">
                                     <div className="icon">
-                                        <i class="fas fa-users"></i>
+                                        <i className="fas fa-users"></i>
                                     </div>
                                     <div className="text">
                                         <h4>User Personalized Data</h4>
@@ -153,7 +161,7 @@ const Home = () => {
                             <div className="col-md-4">
                                 <div className="card card-blue">
                                     <div className="icon">
-                                        <i class="fas fa-database"></i>
+                                        <i className="fas fa-database"></i>
                                     </div>
                                     <h4>High-End Database</h4>
                                     <p>Flatland! Hypatia. Galaxies Orion's sword globular star cluster? Light years quasar as a patch of light gathered by gravity Vangelis radio telescope. Stirred by starlight vanquish the impossible.
@@ -163,7 +171,7 @@ const Home = () => {
                             <div className="col-md-4">
                                 <div className="card card-blue">
                                     <div className="icon">
-                                        <i class="fas fa-server"></i>
+                                        <i className="fas fa-server"></i>
                                     </div>
                                     <h4>Fast and Agile</h4>
                                     <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
@@ -183,8 +191,8 @@ const Home = () => {
                                     </div>
                                     <div className="carousel-testimonial-caption">
                                         <p>Dane Edwards, Instructor</p>
-                                        <h3>"This app truly is Awesome! And it Looks Great too!<br />
-                                        Really Well Done."</h3>
+                                        <h3>"This app... will be truly Awesome! And it Looks Great too!<br />
+                                        Keep up the Good Work."</h3>
                                     </div>
                                 </div>
                             </div>
@@ -201,10 +209,11 @@ const Home = () => {
 
             </>
             ) : (
-                <Spinner animation="border" role="status">
-                <span className="sr-only">Loading...</span>
-              </Spinner>
-                )}
+                    <Spinner animation="border" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </Spinner>
+                )
+            }
         </body >
     );
 };
