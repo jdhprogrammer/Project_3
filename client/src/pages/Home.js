@@ -6,23 +6,26 @@ import UserService from "../services/user.service";
 import "./Landing/css/landing-page.css";
 // import "./Landing/css/pe-icon-7-stroke.css";
 
-import bg3 from "./Landing/img/template/bg3.jpg"
-import iphone3 from "./Landing/img/template/iphone3.png"
+import bg3 from "./Landing/img/template/bg3.jpg";
+import app4mePhone from "./Landing/img/app4me_cutout.png";
+import dane from "./Landing/img/faces/dane.jpeg";
+
+
 import bgTokyo from "./Landing/img/tokyo_sky.jpg";
 import ocean from "./Landing/img/oceans.jpg";
 import slp from "./Landing/img/slp.jpg";
 import paris from "./Landing/img/paris.jpg";
 import sao from "./Landing/img/sao.jpg";
-import tkShops from "./Landing/img/Tokyo_Shops.jpg"
+import tkShops from "./Landing/img/Tokyo_Shops.jpg";
 
-import adobe from "./Landing/img/logos/adobe.png"
-import airbnb from "./Landing/img/logos/airbnb.png"
-import ebay from "./Landing/img/logos/ebay.png"
-import evernote from "./Landing/img/logos/evernote.png"
-import zappos from "./Landing/img/logos/zappos.png"
-import zendesk from "./Landing/img/logos/zendesk.png"
-import mac from "./Landing/img/template/mac.png"
-import ta4m_icon from "./Landing/img/theApp4me/apple-touch-icon.png"
+import adobe from "./Landing/img/logos/adobe.png";
+import airbnb from "./Landing/img/logos/airbnb.png";
+import ebay from "./Landing/img/logos/ebay.png";
+import evernote from "./Landing/img/logos/evernote.png";
+import zappos from "./Landing/img/logos/zappos.png";
+import zendesk from "./Landing/img/logos/zendesk.png";
+import mac from "./Landing/img/template/mac.png";
+import ta4m_icon from "./Landing/img/theApp4me/apple-touch-icon.png";
 
 const Home = () => {
     const [content, setContent] = useState("");
@@ -60,16 +63,11 @@ const Home = () => {
                             <div className="row">
                                 <div className="col-md-5 hidden-xs">
                                     <div className="parallax-image">
-                                        <img className="phone" src={iphone3} style={{"margin-top": "20px"}} />
-                                        <figure>
-                                            <img src={ta4m_icon} className="shadow" style={{"width": "38px", "position": "relative", "top": "343px", "left": "265px", "border-radius": "10px"}} />
-                                            <figcaption style={{"fontSize": "10px", "color": "white", "position": "relative", "top": "343px", "left": "265px", "border-radius": "10px"}}>theApp4me</figcaption>
-
-                                        </figure>
+                                        <img className="phone" src={app4mePhone} style={{"margin-top": "20px"}} />
                                     </div>
                                 </div>
                                 <div className="col-md-6 col-md-offset-1">
-                                    <div className="description">
+                                    <div id="descriptionHome" className="description">
                                         <h2><strong>theApp4me</strong></h2>
                                         <br />
                                         <h5><strong>theApp4me</strong> is a web and mobile application for Me and for You. It is primarily focused on your personal well being. It is about having 0ne place you can go during your day that is just for you. <strong>theApp4me</strong> keeps your life together and running the best it can!</h5>
@@ -122,48 +120,15 @@ const Home = () => {
                             <div className="col-md-6">
                                 <div className="description">
                                     <h4 className="header-text">It's beautiful</h4>
-                                    <p>And your app is also probably social, awesome, easy-to-use and vital to users. This is the place to enlist all the good things that your app has to share. Focus on the benefits that the uers will receive. Try to combine imaginery with text and show meaningful printscreens from your app, that will make it clear what exactly the basic functions are. </p>
-                                    <p>Try to make it very clear for the people browsing the page that this product will enrich their life and will make a nice addition to the homescreen.
-                            <p>
-                                        </p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    <p>Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.
+                            
+                                       
                                     </p>
                                 </div>
                             </div>
                             <div className="col-md-5 col-md-offset-1 hidden-xs">
                                 <img src={mac} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="section section-demo">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-6">
-                                <div id="description-carousel" className="carousel fade" data-ride="carousel">
-                                    <div className="carousel-inner">
-                                        <div className="item">
-                                            <img src="assets/img/template/examples/home_33.jpg" alt="" />
-                                        </div>
-                                        <div className="item active">
-                                            <img src="assets/img/template/examples/home_22.jpg" alt="" />
-                                        </div>
-                                        <div className="item">
-                                            <img src="assets/img/template/examples/home_11.jpg" alt="" />
-                                        </div>
-                                    </div>
-                                    <ol className="carousel-indicators carousel-indicators-blue">
-                                        <li data-target="#description-carousel" data-slide-to="0" className=""></li>
-                                        <li data-target="#description-carousel" data-slide-to="1" className="active"></li>
-                                        <li data-target="#description-carousel" data-slide-to="2" className=""></li>
-                                    </ol>
-                                </div>
-                            </div>
-                            <div className="col-md-5 col-md-offset-1">
-                                <h4 className="header-text">Easy to integrate</h4>
-                                <p>
-                                    With all the apps that users love! Make it easy for users to share, like, post and tweet their favourite things from the app. Be sure to let users know they continue to remain connected while using your app!
-                        </p>
-                                <a href="http://www.creative-tim.com/product/awesome-landing-page" id="Demo3" className="btn btn-fill btn-info" data-button="info">Get Free Demo</a>
                             </div>
                         </div>
                     </div>
@@ -175,30 +140,32 @@ const Home = () => {
                             <div className="col-md-4">
                                 <div className="card card-blue">
                                     <div className="icon">
-                                        <i className="pe-7s-note2"></i>
+                                        <i class="fas fa-users"></i>
                                     </div>
                                     <div className="text">
-                                        <h4>Online Customers Management</h4>
-                                        <p>All appointments sync with your Google calendar so your availability is always up to date. See your schedule at a glance from any device.</p>
+                                        <h4>User Personalized Data</h4>
+                                        <p>Yolo ipsum dolor sit amet, consectetur adipiscing elit. Ut ac suscipit leo. Carpe diem vulputate est nec commodo rutrum. Pellentesque mattis convallis nisi eu and I ain’t stoppin until the swear jar’s full.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-md-4">
                                 <div className="card card-blue">
                                     <div className="icon">
-                                        <i className="pe-7s-bell"></i>
+                                        <i class="fas fa-database"></i>
                                     </div>
-                                    <h4>Smart Notifications on hands</h4>
-                                    <p>Automatic text and email reminders make sure customers always remember their upcoming appointments.</p>
+                                    <h4>High-End Database</h4>
+                                    <p>Flatland! Hypatia. Galaxies Orion's sword globular star cluster? Light years quasar as a patch of light gathered by gravity Vangelis radio telescope. Stirred by starlight vanquish the impossible.
+                                    </p>
                                 </div>
                             </div>
                             <div className="col-md-4">
                                 <div className="card card-blue">
                                     <div className="icon">
-                                        <i className="pe-7s-graph1"></i>
+                                        <i class="fas fa-server"></i>
                                     </div>
-                                    <h4>Know your business better now</h4>
-                                    <p>Take payments and run your business on the go, in your store and then see how it all adds up with analytics.</p>
+                                    <h4>Fast and Agile</h4>
+                                    <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
                                 </div>
                             </div>
                         </div>
@@ -208,98 +175,29 @@ const Home = () => {
                     <div className="container">
                         <h4 className="header-text text-center">What people think</h4>
                         <div id="carousel-example-generic" className="carousel fade" data-ride="carousel">
-
                             <div className="carousel-inner" role="listbox">
-                                <div className="item">
-                                    <div className="mask">
-                                        <img src="assets/img/faces/face-4.jpg" />
-                                    </div>
-                                    <div className="carousel-testimonial-caption">
-                                        <p>Jay Z, Producer</p>
-                                        <h3>"I absolutely love your app! It's truly amazing and looks awesome!"</h3>
-                                    </div>
-                                </div>
                                 <div className="item active">
                                     <div className="mask">
-                                        <img src="assets/img/faces/face-3.jpg" />
+                                        <img src={dane} />
                                     </div>
                                     <div className="carousel-testimonial-caption">
-                                        <p>Drake, Artist</p>
-                                        <h3>"This is one of the most awesome apps I've ever seen! Wish you luck Creative Tim!"</h3>
-                                    </div>
-                                </div>
-                                <div className="item">
-                                    <div className="mask">
-                                        <img src="assets/img/faces/face-2.jpg" />
-                                    </div>
-                                    <div className="carousel-testimonial-caption">
-                                        <p>Rick Ross, Musician</p>
-                                        <h3>"Loving this! Just picked it up the other day. Thank you for the work you put into this."</h3>
+                                        <p>Dane Edwards, Instructor</p>
+                                        <h3>"This app truly is Awesome! And it Looks Great too!<br />
+                                        Really Well Done."</h3>
                                     </div>
                                 </div>
                             </div>
-                            <ol className="carousel-indicators carousel-indicators-blue">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
                         </div>
                     </div>
                 </div>
                 <div className="section section-no-padding">
                     <div className="parallax filter-gradient blue" data-color="blue">
                         <div className="parallax-background">
-                            <img className="parallax-background-image" src="assets/img/template/bg3.jpg" />
-                        </div>
-                        <div className="info">
-                            <h1>Download this landing page for free!</h1>
-                            <p>Beautiful multipurpose bootstrap landing page.</p>
-                            <a href="http://www.creative-tim.com/product/awesome-landing-page" className="btn btn-neutral btn-lg btn-fill">DOWNLOAD</a>
+                            <img className="parallax-background-image" src={bg3} />
                         </div>
                     </div>
                 </div>
-                <footer className="footer">
-                    <div className="container">
-                        <nav className="pull-left">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        Home
-                            </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Company
-                            </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Portfolio
-                            </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Blog
-                            </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div className="social-area pull-right">
-                            <a className="btn btn-social btn-facebook btn-simple">
-                                <i className="fa fa-facebook-square"></i>
-                            </a>
-                            <a className="btn btn-social btn-twitter btn-simple">
-                                <i className="fa fa-twitter"></i>
-                            </a>
-                            <a className="btn btn-social btn-pinterest btn-simple">
-                                <i className="fa fa-pinterest"></i>
-                            </a>
-                        </div>
-                        <div className="copyright">
-                            &copy; 2016 <a href="http://www.creative-tim.com">Creative Tim</a>, made with love
-                </div>
-                    </div>
-                </footer>
+
             </>
             ) : (
                     <div>loading...</div>
@@ -308,3 +206,8 @@ const Home = () => {
     );
 };
 export default Home;
+
+{/* <figure>
+<img src={ta4m_icon} className="shadow" style={{"width": "38px", "position": "relative", "top": "343px", "left": "265px", "border-radius": "10px"}} />
+<figcaption style={{"fontSize": "10px", "color": "white", "position": "relative", "top": "343px", "left": "265px", "border-radius": "10px"}}>theApp4me</figcaption>
+</figure> */}

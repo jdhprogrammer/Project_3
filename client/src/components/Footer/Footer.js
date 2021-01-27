@@ -31,7 +31,7 @@ const Footer = () => {
 
         <Nav >
           <Nav.Link className=" mr-auto ml-3">
-            <Link to={"/user"} className="nav-link">My Dashboard</Link>
+            <Link to={"/user"} className="nav-link">Welcome</Link>
           </Nav.Link>
         </Nav>
         {currentUser ? (

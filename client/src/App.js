@@ -80,7 +80,7 @@ const App = () => {
                             )}
                             {currentUser && (
                                 <Nav.Link>
-                                    <Link to={"/user"} className="nav-link">My Dashboard</Link>
+                                    <Link to={"/user"} className="nav-link">Welcome</Link>
                                 </Nav.Link>
                             )}
                         </Nav>

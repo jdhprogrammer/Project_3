@@ -1040,6 +1040,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de8e0009', e
   color: white;
   padding: 5px;
 }
+#descriptionHome {
+  margin-top: 200px;
+  color: white;
+  padding: 5px;
+}
 
 .landing-page .section-presentation .description{
   padding: 50px 5px 0;
