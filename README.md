@@ -1,4 +1,4 @@
-# theApp4me - React-Redux Personoal Dashboad, Application Suite
+# theApp4me - React-Redux Personal Dashboad, Application Suite
 
 [![github-follow](https://img.shields.io/github/followers/jdhprogrammer?label=Follow&logoColor=purple&style=social)](https://github.com/jdhprogrammer) [![project-languages-used](https://img.shields.io/github/languages/count/jdhprogrammer/TheAppForMe?color=important)](https://github.com/jdhprogrammer/TheAppForMe) [![project-top-language](https://img.shields.io/github/languages/top/jdhprogrammer/TheAppForMe?color=blueviolet)](https://github.com/jdhprogrammer/TheAppForMe) [![license](https://img.shields.io/badge/License-mit-brightgreen.svg)](https://choosealicense.com/licenses/mit/)
 
